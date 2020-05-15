@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
+             mc:Ignorable="d"
+             x:Class="XamarinCalendarExemplo.MainPage">
+
+    <!--<controls:Calendar
+        Events="{Binding Events}">
+        <controls:Calendar.EventTemplate>
+            <DataTemplate>
+                <StackLayout
+                Padding="15,0,0,0">
+                    <Label
+                    Text="{Binding Nome}"
+                    FontAttributes="Bold"
+                    FontSize="Medium" />
+                    <Label
+                    Text="{Binding Descricao}"
+                    FontSize="Small"
+                    LineBreakMode="WordWrap" />
+                </StackLayout>
+            </DataTemplate>
+        </controls:Calendar.EventTemplate>
+    </controls:Calendar>-->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="daysTitleLabelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <controls:Calendar
+        Padding="10,0"
+        AnimateCalendar="True"
+        DayViewCornerRadius="3"
+        DayViewSize="40"
+        DaysTitleColor="Orange"
+        DaysTitleHeight="40"
+        DaysTitleLabelStyle="{StaticResource daysTitleLabelStyle}"
+        DeselectedDayTextColor="Blue"
+        DisableSwipeDetection="False"
+        EventIndicatorColor="Red"
+        EventIndicatorSelectedColor="White"
+        Events="{Binding Events}"
+        Culture="{Binding Culture}"
+        HorizontalOptions="FillAndExpand"
+        MonthLabelColor="Red"
+        OtherMonthDayColor="Gray"
+        SelectedDateColor="Red"
+        SelectedDateTextFormat="ddd, dd MMM yyyy"
+        SelectedDayBackgroundColor="DarkCyan"
+        SelectedDayTextColor="Cyan"
+        SwipeToChangeMonthEnabled="False"
+        SwipeUpToHideEnabled="False"
+        TodayFillColor="Silver"
+        TodayOutlineColor="Blue"
+        VerticalOptions="FillAndExpand"
+        YearLabelColor="Blue">
+
+        <controls:Calendar.EventTemplate>
+            <DataTemplate>
+                <StackLayout
+                Padding="15,0,0,0">
+                    <Label
+                    Text="{Binding Nome}"
+                    FontAttributes="Bold"
+                    FontSize="Medium" />
+                    <Label
+                    Text="{Binding Descricao}"
+                    FontSize="Small"
+                    LineBreakMode="WordWrap" />
+                </StackLayout>
+            </DataTemplate>
+        </controls:Calendar.EventTemplate>
+        
+    </controls:Calendar>
+
+
+</ContentPage>
